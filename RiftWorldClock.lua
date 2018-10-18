@@ -2,6 +2,7 @@
 -- Addon       RiftWorldClock.lua
 -- Author      marcob@marcob.org
 -- StartDate   17/10/2018
+--	Version		0.0.2
 --
 local addon, rwc = ...
 --
@@ -137,7 +138,7 @@ local function calctime_2()
 
 	if tsecs > 0 then
 
-		local wsecs	=	tsecs * multiplyfactor
+		local wsecs	=	(tsecs * multiplyfactor) + rwc.telatimeoffset	--	(7 * 60)
 
 		while wsecs > secsinaday do	wsecs = wsecs - secsinaday end
 
@@ -155,13 +156,16 @@ end
 
 local function showtime()
 
-	local telaraoffset		=	7
+	--	---------------------------------------
+-- 	local telaraoffset		=	7
+	--	---------------------------------------
 	local hours, mins, secs	=	calctime_2()
 	local ampm					=	'am'
 	if tonumber(hours) > 12 then ampm = 'pm' end
 
 	-- Update Clock Text
-	rwc.o.text:SetText(string.format("%s:%s:%s %s", hours, mins + telaraoffset, secs, ampm))
+-- 	rwc.o.text:SetText(string.format("%s:%s:%s %s", hours, mins + telaraoffset, secs, ampm))
+	rwc.o.text:SetText(string.format("%s:%s:%s %s", hours, mins, secs, ampm))
 
 
 	return

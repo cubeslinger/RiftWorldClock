@@ -17,13 +17,15 @@ function rwc.f.round(num, digits)
 end
 
 
-rwc.addon           =  {}
-rwc.addon.name      =  Inspect.Addon.Detail(Inspect.Addon.Current())["name"]
-rwc.addon.version   =  Inspect.Addon.Detail(Inspect.Addon.Current())["toc"]["Version"]
+rwc.addon           			=  {}
+rwc.addon.name      			=  Inspect.Addon.Detail(Inspect.Addon.Current())["name"]
+rwc.addon.version   			=  Inspect.Addon.Detail(Inspect.Addon.Current())["toc"]["Version"]
 --
 --
 --
-rwc.initialized	=	false
+rwc.initialized				=	false
+-- rwc.telatimeoffset			=	420		--	(7 * 60)
+rwc.telatimeoffset			=	516		--	(7 * 60)
 --
 -- GUI
 --
