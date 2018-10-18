@@ -145,7 +145,7 @@ local function calctime_2()
 		hours	=	math.floor(wsecs / secsinanhour)
 		wsecs = 	wsecs - (secsinanhour * hours)
 
-		mins	= 	math.floor(wsecs/60)
+		mins	= 	math.floor(wsecs/secsinamin)
 		wsecs	=	wsecs - (secsinamin * mins)
 
 		secs 	= 	math.floor(wsecs)
@@ -156,15 +156,11 @@ end
 
 local function showtime()
 
-	--	---------------------------------------
--- 	local telaraoffset		=	7
-	--	---------------------------------------
 	local hours, mins, secs	=	calctime_2()
 	local ampm					=	'am'
 	if tonumber(hours) > 12 then ampm = 'pm' end
 
 	-- Update Clock Text
--- 	rwc.o.text:SetText(string.format("%s:%s:%s %s", hours, mins + telaraoffset, secs, ampm))
 	rwc.o.text:SetText(string.format("%s:%s:%s %s", hours, mins, secs, ampm))
 
 

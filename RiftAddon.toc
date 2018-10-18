@@ -1,7 +1,7 @@
 Identifier  =  "RiftWorldClock"
 Name        =  { English = "RiftWorldClock" }
 NameShort   =  "RiftWorldClock"
-Version     =  "0.0.2"
+Version     =  "0.0.3"
 Description =  { English = "Shows the time of the day in Telara time." }
 Author      =  "marcob@marcob.org"
 Website     =  "https://github.com/cubeslinger/RiftWorldClock"
